@@ -1,0 +1,465 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+
+  .navigation {
+    margin: 0;
+  }
+
+  .work-time {
+    font-size: 13px;
+    color: $gray;
+    display: block;
+
+    @include media("<desktop") {
+      display: none;
+    }
+  }
+
+  .login_btn {
+    display: flex;
+    align-items: center;
+    color: $gray;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover,
+    &:active {
+      color: $base-color-1;
+    }
+
+    i {
+      margin: 0 8px 0 0;
+    }
+  }
+
+  .mobile-hidden {
+    @include media("<desktop") {
+      display: none;
+    }
+  }
+}
+
+.header_contacts {
+  padding: 13px 0;
+  border-bottom: 1px solid #efefef;
+
+  @include media("<phone") {
+    padding: 10px 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media("<desktop") {
+      padding: 0 13px;
+    }
+  }
+
+  .logo {
+    display: none;
+
+    @include media("<desktop") {
+      display: block;
+    }
+  }
+
+  &_list {
+    @extend %listreset;
+    display: flex;
+
+    li {
+      margin: 0 30px 0 0;
+
+      @include media("<desktop") {
+        margin: 0 17px 0 0;
+      }
+    }
+
+    a {
+      color: $gray;
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+
+      &:hover,
+      &:active {
+        color: $base-color-1;
+      }
+    }
+
+    i {
+      margin-right: 8px;
+
+      &.icon-whatsapp {
+        color: $base-color-1;
+      }
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+
+    a {
+      @include media("<desktop") {
+        width: 36px;
+        height: 36px;
+        border-radius: 5px;
+        justify-content: center;
+        background: #efefef;
+      }
+
+      span {
+        @include media("<desktop") {
+          display: none;
+        }
+      }
+
+      i {
+        @include media("<desktop") {
+          margin: 0 !important;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.header_menu_holder {
+  padding: 19px 0;
+
+  @include media("<desktop") {
+    position: absolute;
+    right: -400px;
+    width: 260px;
+    top: 0;
+    background: #fff;
+    padding: 15px 18px;
+  }
+
+  @include media("<phone") {
+    height: 100vh;
+    display: flex;
+  }
+
+  .container {
+    @include media("<desktop") {
+      padding: 0;
+    }
+    @include media("<phone") {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .mobile-holder {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include media("<desktop") {
+        flex-direction: column;
+        align-items: inherit;
+      }
+    }
+  }
+
+  .header_menu {
+    &_left {
+      display: flex;
+      align-items: center;
+
+      @include media("<desktop") {
+        display: block;
+        order: 2;
+      }
+    }
+    &_right {
+      display: flex;
+      align-items: center;
+
+      @include media("<desktop") {
+        padding: 55px 0 14px;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .logo {
+    @include media("<desktop") {
+      margin: 0 0 14px;
+    }
+  }
+}
+
+.mobile-menu-info {
+  display: none;
+  text-align: right;
+  width: 100%;
+  border-top: 1px solid #efefef;
+
+  @include media("<desktop") {
+    display: block;
+    padding: 20px 0 13px;
+    order: 3;
+  }
+
+  .work-time {
+    @include media("<desktop") {
+      margin: 0 0 10px;
+      display: block !important;
+    }
+  }
+
+  .header_contacts_list {
+    display: block;
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    a {
+      justify-content: flex-end;
+    }
+  }
+
+  .login_btn {
+    justify-content: flex-end;
+  }
+}
+
+.custom-cart {
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 35px;
+
+  @include media("<desktop") {
+    margin: 0;
+  }
+
+  .cart-contents {
+    color: #000;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    position: relative;
+  }
+  .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background: $base-color-1;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: -6px;
+    right: -5px;
+  }
+
+  .item-holder {
+    font-size: 16px;
+    display: none;
+    margin: 0 12px 0 0;
+
+    @include media("<desktop") {
+      display: block;
+    }
+    span {
+      display: block;
+      line-height: 1;
+    }
+    .item-counter {
+      font-size: 13px;
+      color: #a1a1a1;
+    }
+  }
+}
+
+.logo {
+  max-width: 146px;
+  display: flex;
+  text-align: center;
+  margin-right: 65px;
+}
+
+#nav {
+  margin: 0;
+}
+
+.menu {
+  @extend %listreset;
+  display: flex;
+
+  @include media("<desktop") {
+    display: block;
+    text-align: right;
+    padding: 22px 0;
+    width: 100%;
+    border-top: 1px solid #efefef;
+  }
+
+  li {
+    margin: 0 15px;
+
+    @include media("<desktop") {
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      @include media("<desktop") {
+        margin-bottom: 0;
+      }
+    }
+
+    > a {
+      font-size: 16px;
+    }
+  }
+
+  .menu-item-has-children {
+    position: relative;
+    padding: 0 20px 0 0;
+
+    &:hover,
+    &:active {
+      .sub-menu {
+        display: block;
+      }
+    }
+
+    &:before {
+      content: "\e910";
+      font: 700 13px/1 "icomoon" !important;
+      position: absolute;
+      right: 0;
+      top: 54%;
+      transform: translateY(-50%);
+      color: $gray;
+    }
+  }
+
+  a {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $base-color-1;
+    }
+  }
+
+  .sub-menu {
+    @extend %listreset;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 10;
+    padding: 7px 15px;
+    min-width: 150px;
+    background: white;
+    background: white;
+    box-shadow: 0 0 5px rgba(black, 0.1);
+    li {
+      margin: 0 0 5px;
+    }
+    a {
+      font-size: 16px;
+    }
+  }
+}
+
+.nav-opener {
+  position: relative;
+  margin: 0 0 0 17px;
+  display: none;
+  z-index: 100;
+
+  @include media("<desktop") {
+    display: block;
+  }
+
+  &:before,
+  &:after,
+  & span {
+    background: $black;
+    border-radius: 4px;
+    position: absolute;
+    display: block !important;
+    top: 19px;
+    left: 22%;
+    right: 22%;
+    height: 1px;
+    margin-top: -2px;
+    transition: all 0.2s linear;
+  }
+  &:before,
+  &:after {
+    content: "";
+    top: 13px;
+  }
+  &:after {
+    top: 25px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.nav-active {
+  .header_menu_holder {
+    right: 0;
+
+    &:before {
+      content: "";
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background: rgba(28, 25, 25, 0.4);
+    }
+  }
+
+  .header_contacts {
+    border-color: transparent;
+  }
+
+  .nav-opener {
+    background: $base-color-1;
+
+    span {
+      opacity: 0;
+    }
+
+    &:after,
+    &:before {
+      transform: rotate(45deg);
+      top: 19px !important;
+      left: 15%;
+      right: 15%;
+      background: #fff;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}

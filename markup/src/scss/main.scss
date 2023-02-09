@@ -1,0 +1,107 @@
+$breakpoints: (
+  "xs-phone": 375px,
+  "phone": 480px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "widescreen": 1200px,
+);
+
+// ligatured operators ≥ ≤
+
+@import "vendors/include-media";
+@import "vendors/normalize";
+@import "vendors/animate";
+
+@import "base/variables";
+@import "base/helpers";
+@import "base/reset";
+@import "base/cms-reset";
+@import "base/forms";
+@import "base/wp-reset";
+@import "base/typography";
+@import "base/fonts";
+@import "base/buttons";
+@import "base/lightbox";
+@import "base/slick";
+
+@import "sections/header";
+@import "sections/footer";
+@import "sections/visual-section";
+@import "sections/app-section";
+@import "sections/best-sellers";
+@import "sections/product-section";
+@import "sections/section-reviews";
+@import "sections/partners-section";
+@import "sections/blog-section";
+@import "sections/pro-section";
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  @include media("<desktop") {
+    font-size: 14px;
+  }
+
+  @include media("<phone") {
+    font-size: 13px;
+  }
+}
+
+#wrapper {
+  position: relative;
+  flex-grow: 1;
+  padding: 114px 0 0;
+
+  @include media("<desktop") {
+    padding: 62px 0 0;
+    overflow: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 0 30px;
+
+  @include media("<desktop") {
+    padding: 0 20px;
+  }
+}
+
+.social_list {
+  @extend %listreset;
+  display: flex;
+
+  li {
+    margin: 0 16px 0 0;
+    display: flex;
+    text-align: center;
+  }
+
+  a {
+    width: 30px;
+    height: 30px;
+    background: #320b5a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: none !important;
+      background: rgba($white, 0.15);
+    }
+  }
+}

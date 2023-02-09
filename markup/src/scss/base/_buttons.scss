@@ -1,0 +1,102 @@
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 330px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn-blue-border {
+  background: white;
+  border: 1px solid $base-color-2;
+  color: $base-color-2;
+
+  &:hover,
+  &:active {
+    background: $base-color-2;
+    color: white;
+  }
+}
+
+.btn-white-border {
+  background: transparent;
+  border-color: white;
+  color: white;
+
+  &:hover,
+  &:active {
+    background: white;
+    color: black;
+    border-color: black;
+  }
+}
+
+.btn-video {
+  background: transparent;
+  color: #1b1818;
+  padding: 13px 18px;
+  border-width: 2px;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:active {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+  .img-border {
+    display: inline-block;
+    margin-right: 18px;
+    max-width: 32px;
+
+    img {
+      width: 100%;
+      transition: 0.3s all;
+    }
+  }
+}
+
+.btn-blue {
+  background: $base-color-2;
+  color: white;
+  &:hover,
+  &:active {
+    background: white;
+    border: 1px solid $base-color-2;
+    color: $base-color-2;
+  }
+}
+
+.btn-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 62px;
+  height: 62px;
+  background: $base-color-1;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+
+  &:hover,
+  &:active {
+    background: darken($base-color-1, 5%);
+  }
+
+  &:before {
+    content: "\e90b";
+    font-family: "icomoon" !important;
+    color: #fff;
+  }
+}

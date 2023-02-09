@@ -1,0 +1,163 @@
+.product-section {
+  .product-frame {
+    display: flex;
+    margin: 0 0 100px;
+
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+.summary.entry-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 0 45px;
+
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .quantity {
+    margin: 0 0 25px;
+  }
+}
+
+.flex-control-nav {
+  @extend %listreset;
+  display: flex;
+  padding: 20px 0;
+
+  li {
+    max-width: 100px;
+    padding: 8px;
+  }
+}
+
+.product-desctiption-box {
+  display: flex;
+  flex-wrap: wrap;
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: 10px;
+
+  > * {
+    width: 50%;
+  }
+
+  .mashin-learning-text {
+    display: flex;
+    align-items: flex-end;
+    background: $base-color-4;
+    padding: 34px 0 0 40px;
+
+    .title {
+      display: block;
+      font-size: 45px;
+      color: #000;
+      margin: 0 0 20px;
+    }
+
+    ul {
+      margin: 0 0 43px;
+
+      @include media("<phone") {
+        margin: 0 0 20px;
+      }
+
+      li {
+        margin: 0 0 5px;
+        position: relative;
+
+        @include media("<phone") {
+          margin: 0;
+        }
+
+        &:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: -27px;
+          top: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 0 5px 9px;
+          border-color: transparent transparent transparent #2c2c2c;
+
+          @include media("<phone") {
+            left: -12px;
+            top: 6px;
+            border-width: 4px 0 4px 8px;
+          }
+        }
+      }
+    }
+
+    .img-holder {
+      img {
+        transform: rotateY(180deg);
+
+        @include media("<phone") {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  .woocommerce-tabs {
+    padding: 0 30px 0 0;
+  }
+}
+
+.products {
+  &.columns-1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+
+    li {
+      width: 33.33%;
+      padding: 10px;
+    }
+  }
+  &.columns-4 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0 50px;
+
+    li {
+      max-width: 120px;
+      margin: 0 20px 0 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+
+    .type-product {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .price {
+      color: #000;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-block;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      color: #1f2eb2;
+      text-decoration: none;
+    }
+  }
+}

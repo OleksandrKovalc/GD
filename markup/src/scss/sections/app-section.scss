@@ -1,0 +1,141 @@
+.app-section {
+  .container {
+    padding: 15px 30px;
+    max-width: 1440px;
+
+    @include media("<desktop") {
+      padding: 15px 20px;
+    }
+  }
+
+  .bg-holder {
+    background: $base-color-4;
+    display: flex;
+    padding: 54px 7% 70px;
+
+    @include media("<widescreen") {
+      padding: 50px 20px;
+    }
+
+    @include media("<tablet") {
+      display: block;
+      padding: 30px 16px;
+    }
+
+    @include media("<phone") {
+      padding: 40px 16px 26px;
+    }
+  }
+
+  .slogan {
+    color: $base-color-1;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 0 45px;
+  }
+
+  .img-holder {
+    width: 316px;
+    flex-shrink: 0;
+
+    @include media("<tablet") {
+      margin: 0 auto;
+      padding-left: 30px;
+    }
+  }
+
+  .h1 {
+    margin: 0 0 15px;
+
+    @include media("<phone") {
+      font-size: 24px;
+    }
+  }
+
+  .check-list {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 15px;
+    font: 16px/1.6 $base-font-sans-serif;
+
+    @include media("<phone") {
+      margin: 0 0 20px;
+    }
+
+    li {
+      padding: 0 50px 30px 37px;
+      width: 50%;
+      position: relative;
+
+      @include media("<desktop") {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      @include media("<phone") {
+        margin: 0;
+      }
+
+      &:before {
+        content: "\e90a";
+        font-family: "icomoon" !important;
+        color: $base-color-1;
+        position: absolute;
+        left: 0px;
+        top: 0;
+
+        @include media("<phone") {
+          left: 4px;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .head-text {
+    color: #000;
+    margin: 0 0 20px;
+  }
+
+  .bottom-text {
+    color: #2c2c2c;
+    margin: 0 0 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+
+  .btn-holder {
+    display: flex;
+
+    a {
+      &:hover,
+      &:active {
+        opacity: 0.8;
+      }
+
+      &:first-child {
+        margin-right: 30px;
+
+        @include media("<phone") {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &.black-mode {
+    color: #fff;
+
+    .bg-holder {
+      background: #151515;
+    }
+
+    .h1,
+    .bottom-text {
+      color: #fff;
+    }
+  }
+}

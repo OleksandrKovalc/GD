@@ -1,0 +1,154 @@
+.section-reviews {
+  padding: 15px 30px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+  }
+
+  @include media("<phone") {
+    padding: 15px 0;
+  }
+
+  .h1 {
+    @include media("<phone") {
+      margin: 0 0 0.5em;
+    }
+  }
+
+  .bg-holder {
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 0 130px 36px;
+    background: $base-color-4;
+    position: relative;
+
+    @include media("<widescreen") {
+      padding: 0 40px 36px;
+    }
+
+    @include media("<tablet") {
+      padding: 0 20px;
+    }
+    @include media("<600px") {
+      padding: 0 36px;
+    }
+  }
+}
+
+.reviews-card {
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 32px 40px;
+  line-height: 1.5;
+
+  @include media("<tablet") {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 23px;
+  }
+
+  .top-frame {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px;
+
+    @include media("<tablet") {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 0 22px;
+    }
+
+    .img-box {
+      max-width: 102px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+
+      @include media("<tablet") {
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  .info-box {
+    background: url(../img/quote.svg) no-repeat 0 50%;
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .profession {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.reviews-slider {
+  margin: 0 -15px;
+
+  @include media("<tablet") {
+    margin: 0 -8px;
+  }
+
+  .slick-list {
+    @include media("<600px") {
+      overflow: visible;
+    }
+  }
+
+  .slick-slide {
+    padding: 50px 15px;
+
+    @include media("<tablet") {
+      padding: 30px 8px 126px;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include media("<tablet") {
+      bottom: 54px;
+    }
+  }
+}
+
+.reviews-slider-nav {
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 32px;
+    font-size: 8px;
+
+    @include media("<widescreen") {
+      left: 20px;
+      box-shadow: 0 0 5px rgba(black, 0.1);
+    }
+
+    @include media("<tablet") {
+      top: auto;
+      bottom: 40px;
+      transform: translateY(0);
+    }
+
+    &.icon-arrow-thin-right {
+      left: auto;
+      right: 32px;
+
+      @include media("<widescreen") {
+        right: 20px;
+      }
+    }
+  }
+}
