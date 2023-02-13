@@ -99,6 +99,7 @@
   color: $gray;
   border: 1px solid #f7f7f7;
   font-family: "icomoon" !important;
+  z-index: 5;
 
   &.slick-hidden {
     display: none;

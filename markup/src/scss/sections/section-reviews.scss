@@ -16,9 +16,9 @@
   }
 
   .bg-holder {
-    max-width: 1410px;
+    max-width: 1380px;
     margin: 0 auto;
-    padding: 0 130px 36px;
+    padding: 0 110px 36px;
     background: $base-color-4;
     position: relative;
 
@@ -39,7 +39,7 @@
   background: #fff;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
-  padding: 32px 40px;
+  padding: 18px;
   line-height: 1.5;
 
   @include media("<tablet") {
@@ -47,46 +47,8 @@
     padding: 23px;
   }
 
-  .top-frame {
-    display: flex;
-    align-items: center;
-    margin: 0 0 30px;
-
-    @include media("<tablet") {
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 0 0 22px;
-    }
-
-    .img-box {
-      max-width: 102px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-right: 20px;
-
-      @include media("<tablet") {
-        margin: 0 0 20px;
-      }
-    }
-  }
-
-  .info-box {
-    background: url(../img/quote.svg) no-repeat 0 50%;
-    color: #000;
-    font-size: 14px;
-    font-weight: 300;
-    min-height: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .profession {
-      font-size: 16px;
-      letter-spacing: 1px;
-    }
-    p {
-      margin: 0;
-    }
+  img {
+    width: 100%;
   }
 }
 
@@ -104,7 +66,7 @@
   }
 
   .slick-slide {
-    padding: 50px 15px;
+    padding: 50px 15px 60px;
 
     @include media("<tablet") {
       padding: 30px 8px 126px;
@@ -128,7 +90,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 32px;
+    left: 45px;
     font-size: 8px;
 
     @include media("<widescreen") {
@@ -144,7 +106,7 @@
 
     &.icon-arrow-thin-right {
       left: auto;
-      right: 32px;
+      right: 45px;
 
       @include media("<widescreen") {
         right: 20px;

@@ -34,6 +34,9 @@ $breakpoints: (
 @import "sections/partners-section";
 @import "sections/blog-section";
 @import "sections/pro-section";
+@import "sections/director-section";
+@import "sections/do-section";
+@import "sections/device-section";
 
 html,
 body {
@@ -81,7 +84,7 @@ body {
   display: flex;
 
   li {
-    margin: 0 16px 0 0;
+    margin: 0 18px 0 0;
     display: flex;
     text-align: center;
   }
@@ -103,5 +106,40 @@ body {
       text-decoration: none !important;
       background: rgba($white, 0.15);
     }
+  }
+}
+
+.scroll {
+  .btn-back {
+    right: 15px;
+  }
+}
+
+.btn-back {
+  display: none;
+  text-decoration: none;
+
+  @include media("<tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    position: fixed;
+    bottom: 15px;
+    right: -50px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    z-index: 10;
+    background: rgba(black, 0.5);
+  }
+
+  &:before {
+    content: "\e910";
+    font-family: "icomoon";
+    font-size: 36px;
+    line-height: 0;
+    color: #fff;
+    transform: rotate(180deg);
   }
 }

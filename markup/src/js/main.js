@@ -2,6 +2,9 @@
 //= slick.js
 //= slick_custom.js
 //= lightbox.js
+//= anchors.js
+//= fixed-btn-back.js
+//= input-button.js
 
 new WOW().init();
 
