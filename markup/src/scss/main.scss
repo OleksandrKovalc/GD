@@ -6,10 +6,8 @@ $breakpoints: (
   "widescreen": 1200px,
 );
 
-// ligatured operators ≥ ≤
-
 @import "vendors/include-media";
-@import "vendors/normalize";
+// @import "vendors/normalize";
 @import "vendors/animate";
 
 @import "base/variables";
@@ -37,6 +35,7 @@ $breakpoints: (
 @import "sections/director-section";
 @import "sections/do-section";
 @import "sections/device-section";
+@import "sections/specifications-section";
 
 html,
 body {
@@ -61,12 +60,16 @@ body {
 #wrapper {
   position: relative;
   flex-grow: 1;
-  padding: 114px 0 0;
+  padding: 114px 0 30px;
 
   @include media("<desktop") {
-    padding: 62px 0 0;
+    padding: 62px 0 15px;
     overflow: hidden;
   }
+}
+
+#wpadmminbar {
+  padding-top: 50px;
 }
 
 .container {
@@ -109,6 +112,46 @@ body {
   }
 }
 
+.check-list {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 15px;
+  font: 16px/1.5 $base-font-sans-serif;
+
+  @include media("<phone") {
+    margin: 0 0 20px;
+  }
+
+  li {
+    padding: 0 50px 30px 28px;
+    margin: 0;
+    position: relative;
+
+    @include media("<desktop") {
+      padding-right: 0;
+    }
+
+    @include media("<phone") {
+      margin: 0;
+    }
+
+    &:before {
+      content: "\e90a";
+      font-family: "icomoon" !important;
+      color: $base-color-1;
+      position: absolute;
+      left: 0px;
+      top: 0;
+
+      @include media("<phone") {
+        left: 4px;
+        top: 0;
+      }
+    }
+  }
+}
+
 .scroll {
   .btn-back {
     right: 15px;
@@ -141,5 +184,19 @@ body {
     line-height: 0;
     color: #fff;
     transform: rotate(180deg);
+  }
+}
+
+#mySpriteSpin {
+  // width: 100% !important;
+  // height: 600px;
+  // padding: 0 0 56%;
+  // height: 700px !important;
+  box-shadow: 0 0 5px rgba(black, 0.5);
+
+  .spritespin-canvas {
+    // left: 0 !important;
+    // right: 0 !important;
+    // transform: scale(0.5);
   }
 }

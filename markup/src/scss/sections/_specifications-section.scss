@@ -1,0 +1,77 @@
+.specifications-section {
+  padding: 30px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+  }
+
+  .bg-holder {
+    padding: 54px 0 80px;
+    background: $base-color-4;
+
+    @include media("<tablet") {
+      padding: 40px 0;
+    }
+  }
+
+  .h1 {
+    margin: 0 0 52px;
+
+    @include media("<tablet") {
+      margin: 0 0 30px;
+    }
+  }
+
+  .four-columns {
+    display: grid;
+    gap: 100px;
+    grid-template-columns: repeat(4, minmax(210px, 1fr));
+    font-size: 14px;
+    color: $gray;
+
+    @include media("<widescreen") {
+      gap: 30px;
+    }
+
+    @include media("<desktop") {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .col {
+      padding: 27px;
+      background: #fff;
+      border-radius: 5px;
+      text-align: center;
+
+      @include media("<desktop") {
+        padding: 28px 20px;
+      }
+    }
+
+    .img-box {
+      max-width: 48px;
+      margin: 0 auto 18px;
+    }
+
+    strong {
+      font-size: 16px;
+      display: block;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 5px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  .btn-holder {
+    padding: 50px 0 0;
+    text-align: center;
+
+    @include media("<phone") {
+      padding: 30px 0 0;
+    }
+  }
+}

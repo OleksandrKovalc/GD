@@ -1,0 +1,129 @@
+.director-section {
+  padding: 30px 30px 15px;
+  font-size: 20px;
+  color: #636363;
+  text-align: center;
+
+  @include media("<desktop") {
+    padding: 20px 20px 15px;
+    font-size: 18px;
+  }
+
+  @include media("<phone") {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 50px 100px;
+    max-width: 1380px;
+    background: $base-color-4;
+    position: relative;
+
+    @include media("<desktop") {
+      padding: 30px 20px;
+    }
+
+    @include media("<phone") {
+      padding: 20px 15px;
+    }
+  }
+
+  h2 {
+    font-size: 38px;
+    margin: 0 0 45px;
+    text-transform: capitalize;
+
+    @include media("<desktop") {
+      font-size: 32px;
+    }
+
+    @include media("<tablet") {
+      margin: 0 0 20px;
+    }
+  }
+
+  .description {
+    max-width: 880px;
+    margin: 0 auto 50px;
+
+    @include media("<phone") {
+      margin-bottom: 25px;
+    }
+  }
+
+  .btn {
+    min-width: 168px;
+  }
+}
+
+.director-slider {
+  margin: 0 auto 40px;
+
+  @include media("<tablet") {
+    padding: 0 13%;
+  }
+
+  @include media("<phone") {
+    padding: 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide {
+    transition: all 0.4s;
+    transform: scale(0.4);
+
+    @include media("<widescreen") {
+      transform: scale(0.55);
+    }
+
+    @include media("<tablet") {
+      transform: scale(1);
+    }
+
+    &.slick-center {
+      transform: scale(1);
+      position: relative;
+      background: url(../img/lines-slide.svg) no-repeat 50% 50%;
+      background-size: 100% 100%;
+
+      @include media("<tablet") {
+        display: none;
+      }
+    }
+  }
+
+  .slick-arrow {
+    left: -70px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include media("<desktop") {
+      left: 0;
+    }
+
+    @include media("<phone") {
+      left: -35px;
+    }
+
+    &.slick-next {
+      left: auto;
+      right: -70px;
+
+      @include media("<desktop") {
+        right: 0;
+      }
+      @include media("<phone") {
+        right: -35px;
+      }
+    }
+  }
+}

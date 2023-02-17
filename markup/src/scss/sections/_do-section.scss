@@ -1,0 +1,251 @@
+.do-section {
+  padding: 50px 0;
+
+  @include media("<phone") {
+    padding: 30px 0;
+  }
+
+  .h1 {
+    margin: 0 0 30px;
+
+    @include media("<phone") {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  grid-auto-rows: 286px;
+  grid-auto-flow: dense;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: #2c2c2c;
+
+  @include media("<widescreen") {
+    grid-gap: 10px;
+  }
+
+  @include media("<desktop") {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    font-size: 15px;
+  }
+
+  @include media("<tablet") {
+    grid-template-columns: repeat(2, minmax(230px, 1fr));
+    grid-auto-rows: 300px;
+  }
+  @include media("<530px") {
+    grid-template-columns: repeat(1, minmax(230px, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: 250px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: $base-color-4;
+    padding: 28px;
+    overflow: hidden;
+
+    @include media("<desktop") {
+      grid-column: span 1 !important;
+      padding: 20px;
+    }
+
+    .img-frame {
+      max-width: 90px;
+      margin: 0 0 20px;
+
+      @include media("<530px") {
+        max-width: 80px;
+      }
+    }
+
+    .btn {
+      min-width: 200px;
+      padding: 13px;
+
+      @include media("<400px") {
+        width: 100%;
+      }
+    }
+
+    &.right-img {
+      .img-frame {
+        margin-left: auto !important;
+      }
+    }
+
+    &.reverse-column {
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+
+      p {
+        max-width: 166px;
+        margin: 0 0 30px;
+
+        @include media("<530px") {
+          max-width: none;
+          margin: 0 0 20px;
+        }
+      }
+
+      .img-frame {
+        margin: 0;
+      }
+    }
+
+    &.x2 {
+      grid-column: span 2;
+    }
+
+    &.x3 {
+      grid-column: span 3;
+
+      &:not(.bg-img) {
+        .btn {
+          border: 1px solid #000;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .bg-img {
+    position: relative;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    justify-content: flex-end;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($black, 0.1);
+      transition: 0.3s all;
+    }
+
+    > * {
+      position: relative;
+    }
+
+    p {
+      max-width: 400px;
+
+      &:only-child {
+        margin: 0;
+      }
+    }
+
+    &.top-text {
+      justify-content: flex-start;
+    }
+  }
+
+  .bg-green {
+    background: $base-color-1;
+    color: #fff;
+
+    &.x2 {
+      flex-direction: row;
+      align-items: center;
+
+      @include media("<desktop") {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .text {
+        flex-grow: 1;
+        max-width: 50%;
+
+        @include media("<desktop") {
+          max-width: none;
+          order: 2;
+        }
+      }
+
+      .img-frame {
+        max-width: 50%;
+        order: 2;
+        margin: 0 0 0 15px;
+
+        @include media("<desktop") {
+          max-width: 90px;
+          order: 1;
+          margin: 0 0 10px;
+        }
+      }
+    }
+  }
+
+  .tall {
+    grid-row: span 2;
+    justify-content: space-between;
+    padding: 46px 0 0;
+
+    @include media("<desktop") {
+      padding: 20px 0 0;
+      grid-row: span 1;
+    }
+
+    @include media("<tablet") {
+    }
+
+    p {
+      margin-left: 28px;
+      margin-right: 28px;
+
+      @include media("<desktop") {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+    .img-frame {
+      max-width: 100%;
+      margin: 0 auto;
+
+      @include media("<tablet") {
+        max-width: 160px;
+      }
+    }
+
+    &.top-img {
+      padding: 0 0 40px;
+      flex-direction: column-reverse;
+
+      @include media("<desktop") {
+        padding: 0 0 20px;
+      }
+
+      .img-frame {
+        @include media("<tablet") {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}

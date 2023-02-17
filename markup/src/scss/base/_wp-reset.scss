@@ -136,6 +136,10 @@
   display: flex;
   justify-content: center;
 
+  .nav-links {
+    display: flex;
+  }
+
   .screen-reader-text {
     position: absolute;
     left: -99999px;
@@ -174,6 +178,7 @@
     }
     &:hover {
       opacity: 0.8;
+      box-shadow: 0 0 5px rgba(black, 0.1);
     }
   }
 }

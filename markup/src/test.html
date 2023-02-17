@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    test
+    <div id="mySpriteSpin">
+      <img src="3d-images/socket20000.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20001.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20002.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20003.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20004.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20005.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20006.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20007.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20008.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20009.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20010.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20011.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20012.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20013.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20014.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20015.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20016.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20017.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20018.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20019.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20020.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20021.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20022.png" alt="" data-name="sprite-img" />
+      <img src="3d-images/socket20023.png" alt="" data-name="sprite-img" />
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://unpkg.com/spritespin@4.0.11/release/spritespin.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        const spriteImages = document.querySelectorAll(
+          `[data-name*="sprite-img"]`
+        );
+
+        const sptitteImgSrc = [
+          ...Array.from(spriteImages).map((el) => {
+            return el.attributes.src.value;
+          }),
+        ];
+
+        $("#mySpriteSpin").spritespin({
+          source: sptitteImgSrc,
+          responsive: true,
+          sense: 1,
+          animate: false,
+          frames: sptitteImgSrc.length,
+          loop: true,
+          frameWrap: true,
+        });
+      });
+    </script>
+    <style>
+      #mySpriteSpin {
+        border: 1px solid #000;
+      }
+    </style>
+  </body>
+</html>

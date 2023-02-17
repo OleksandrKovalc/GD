@@ -1,0 +1,110 @@
+.device-section {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: $gray;
+  padding: 25px 0;
+
+  @include media("<tablet") {
+    padding: 15px 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @include media("<desktop") {
+      align-items: flex-start;
+    }
+
+    @include media("<tablet") {
+      flex-direction: column;
+    }
+  }
+
+  .h1 {
+    margin: 0 0 30px;
+
+    @include media("<phone") {
+      margin: 0 0 15px;
+    }
+  }
+
+  .text-holder {
+    flex-grow: 1;
+    max-width: 450px;
+    margin: 0 5% 0 8%;
+
+    @include media("<widescreen") {
+      margin: 0 40px 0 0;
+    }
+
+    @include media("<desktop") {
+      margin: 0 20px 0 0;
+    }
+    @include media("<tablet") {
+      max-width: none;
+    }
+  }
+
+  .slogan {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+
+    @include media("<phone") {
+      font-size: 17px;
+    }
+  }
+
+  p {
+    margin: 0 0 30px;
+
+    @include media("<phone") {
+      margin: 0 0 15px;
+    }
+  }
+
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+
+    @include media("<phone") {
+      margin: 0 0 15px;
+    }
+
+    li {
+      counter-increment: my-counter;
+      &:before {
+        counter-increment: section;
+        content: counter(my-counter) " ";
+      }
+    }
+  }
+
+  .img-holder {
+    max-width: 570px;
+    padding: 160px 70px 0 0;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: 456px auto;
+
+    @include media("<widescreen") {
+      background-size: 90% auto;
+    }
+
+    @include media("<desktop") {
+      padding-right: 4%;
+      display: flex;
+      align-items: center;
+      background-position: 100% 50%;
+      min-width: 330px;
+    }
+
+    @include media("<tablet") {
+      padding-top: 10px;
+      max-width: 70%;
+      background: none !important;
+    }
+  }
+}

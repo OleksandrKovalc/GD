@@ -32,7 +32,7 @@ $(function () {
 
   $(".partners-slider").slick({
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -63,6 +63,7 @@ $(function () {
   });
 
   $(".director-slider").slick({
+    infinite: true,
     centerMode: true,
     slidesToShow: 3,
     slidesToScroll: 1,
