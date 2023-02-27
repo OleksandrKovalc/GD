@@ -22,7 +22,7 @@ textarea {
   padding: $form-element-padding;
 
   // &:hover {
-    
+
   // }
 
   &:focus {
@@ -35,21 +35,144 @@ textarea {
 }
 
 select {
+  color: $gray;
   -webkit-border-radius: 0;
+  font-size: 14px;
+  padding: 3px 20px 3px 9px;
+
+  background: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 textarea {
   resize: vertical;
   vertical-align: top;
+  resize: none;
 }
 
 button,
-input[type='button'],
-input[type='reset'],
-input[type='file'],
-input[type='submit'] {
+input[type="button"],
+input[type="reset"],
+input[type="file"],
+input[type="submit"] {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   cursor: pointer;
 }
 
+.select {
+  position: relative;
+  border: 1px solid #e6e6e8;
+  width: 366px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: $gray;
+
+  @include media("<phone") {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  &:before,
+  &:after {
+    font-family: "icomoon";
+    top: 50%;
+    transform: rotate(0) translateY(-50%);
+    transition: 0.3s all;
+  }
+
+  &:before {
+    content: "\e921";
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    color: $base-color-1;
+
+    @include media("<phone") {
+      left: 13px;
+    }
+  }
+
+  &:after {
+    content: "\e915";
+    font-size: 20px;
+    line-height: 0;
+    color: #000;
+    position: absolute;
+    right: 30px;
+  }
+
+  .select-option-text {
+    @extend %ellipsis;
+    display: block;
+    cursor: pointer;
+    padding: 20px 50px 20px 70px;
+
+    @include media("<tablet") {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    @include media("<phone") {
+      padding: 10px 40px;
+    }
+  }
+
+  ul.select-list {
+    @extend %listreset;
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    background: #fff;
+    outline: 1px solid #e6e6e8;
+    padding: 15px 0;
+    max-height: 400px;
+    overflow-y: auto;
+
+    li.select-option,
+    li {
+      display: block;
+      margin: 0;
+
+      &:hover {
+        background: lighten($gray, 75%);
+
+        .select-option-link {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .select-option-link {
+      position: relative;
+      padding: 10px 25px;
+      position: relative;
+      display: block;
+      color: #000;
+      text-decoration: none;
+      line-height: 20px;
+      transition: 0.1s ease-out;
+
+      @include media("<phone") {
+        padding: 10px 15px;
+      }
+    }
+  }
+
+  &.select_open {
+    .select-option-text {
+      border-bottom-color: red;
+    }
+
+    &:after {
+      transform: rotate(-180deg);
+    }
+
+    .select-list {
+      display: block;
+    }
+  }
+}

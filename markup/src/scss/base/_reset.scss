@@ -34,5 +34,11 @@ img {
 }
 
 a {
+  text-decoration: none;
+  color: $base-link-color;
   transition: 0.3s all;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

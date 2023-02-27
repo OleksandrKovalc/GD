@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?dqachf");
-  src: url("../fonts/icomoon.eot?dqachf#iefix") format("embedded-opentype"),
-    url("../fonts/icomoon.ttf?dqachf") format("truetype"),
-    url("../fonts/icomoon.woff?dqachf") format("woff"),
-    url("../fonts/icomoon.svg?dqachf#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?l8ztka");
+  src: url("../fonts/icomoon.eot?l8ztka#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?l8ztka") format("truetype"),
+    url("../fonts/icomoon.woff?l8ztka") format("woff"),
+    url("../fonts/icomoon.svg?l8ztka#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-whatsapp-2:before {
+  content: "\e91f";
+}
+.icon-telegram:before {
+  content: "\e920";
+}
+.icon-date:before {
+  content: "\e91c";
+}
+.icon-eye-viewers:before {
+  content: "\e91d";
+}
 .icon-eye-pass:before {
   content: "\e916";
 }
@@ -82,4 +94,34 @@
 }
 .icon-clock:before {
   content: "\e90f";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+.icon-arrow-left:before {
+  content: "\e906";
+}
+.icon-search:before {
+  content: "\e909";
+}
+.icon-list_bullets:before {
+  content: "\e921";
+}
+.icon-360-deg:before {
+  content: "\e917";
+}
+.icon-short_arrow_top:before {
+  content: "\e910";
+}
+.icon-short_arrow_right:before {
+  content: "\e913";
+}
+.icon-short_arrow_left:before {
+  content: "\e914";
+}
+.icon-short_arrow_bottom:before {
+  content: "\e915";
+}
+.icon-close:before {
+  content: "\e904";
 }

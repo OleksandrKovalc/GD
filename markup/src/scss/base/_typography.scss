@@ -70,6 +70,7 @@ h3,
 h4,
 .h4 {
   font-size: $h4-font-size;
+  margin: 0 0 23px;
 }
 
 h5,
@@ -83,13 +84,5 @@ h6,
 }
 
 p {
-  margin: 0 0 1em;
-}
-
-a {
-  color: $base-link-color;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+  margin: 0 0 1.2em;
 }

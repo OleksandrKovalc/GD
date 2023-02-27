@@ -2,7 +2,7 @@
   font-size: 16px;
   letter-spacing: 1px;
   color: $gray;
-  padding: 25px 0;
+  padding: 50px 0;
 
   @include media("<tablet") {
     padding: 15px 0;
@@ -44,6 +44,10 @@
     @include media("<tablet") {
       max-width: none;
     }
+
+    @include media("<phone") {
+      margin: 0;
+    }
   }
 
   .slogan {
@@ -65,8 +69,7 @@
   }
 
   ol {
-    list-style: none;
-    padding: 0;
+    @extend %listreset;
     margin: 0 0 30px;
 
     @include media("<phone") {
@@ -78,6 +81,75 @@
       &:before {
         counter-increment: section;
         content: counter(my-counter) " ";
+      }
+    }
+  }
+
+  ol {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 15px;
+    font: 16px/1.5 $base-font-sans-serif;
+
+    @include media("<phone") {
+      margin: 0 0 20px;
+    }
+
+    li {
+      padding: 0 50px 30px 28px;
+      margin: 0;
+      position: relative;
+
+      @include media("<desktop") {
+        padding-right: 0;
+      }
+
+      @include media("<phone") {
+        margin: 0;
+      }
+
+      &:before {
+        content: "\e90a";
+        font-family: "icomoon" !important;
+        color: $base-color-1;
+        position: absolute;
+        left: 0px;
+        top: 0;
+
+        @include media("<phone") {
+          left: 4px;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.25;
+    padding: 0;
+
+    li {
+      position: relative;
+      width: 50%;
+      padding: 0 10px 11px 30px;
+
+      @include media("<phone") {
+        width: 100%;
+        padding-left: 25px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 7px;
+        height: 7px;
+        background: #40ac6c;
+        border-radius: 50%;
       }
     }
   }
@@ -105,6 +177,19 @@
       padding-top: 10px;
       max-width: 70%;
       background: none !important;
+    }
+  }
+
+  .highlighting-gray {
+    display: block;
+    margin: 0 0 0 30px;
+    padding: 13px 30px;
+    background: $base-color-4;
+    color: $gray;
+
+    @include media("<phone") {
+      margin: 0;
+      padding: 10px 20px;
     }
   }
 }

@@ -1,5 +1,5 @@
 .specifications-section {
-  padding: 30px;
+  padding: 15px 30px;
 
   @include media("<desktop") {
     padding: 15px 20px;
@@ -8,6 +8,8 @@
   .bg-holder {
     padding: 54px 0 80px;
     background: $base-color-4;
+    max-width: 1380px;
+    margin: 0 auto;
 
     @include media("<tablet") {
       padding: 40px 0;
@@ -16,6 +18,7 @@
 
   .h1 {
     margin: 0 0 52px;
+    text-align: center;
 
     @include media("<tablet") {
       margin: 0 0 30px;

@@ -6,11 +6,12 @@ $breakpoints: (
   "widescreen": 1200px,
 );
 
+@import "base/variables";
+
 @import "vendors/include-media";
-// @import "vendors/normalize";
+@import "vendors/normalize";
 @import "vendors/animate";
 
-@import "base/variables";
 @import "base/helpers";
 @import "base/reset";
 @import "base/cms-reset";
@@ -24,6 +25,7 @@ $breakpoints: (
 
 @import "sections/header";
 @import "sections/footer";
+@import "sections/aside";
 @import "sections/visual-section";
 @import "sections/app-section";
 @import "sections/best-sellers";
@@ -36,6 +38,9 @@ $breakpoints: (
 @import "sections/do-section";
 @import "sections/device-section";
 @import "sections/specifications-section";
+@import "sections/3d_viewer";
+@import "sections/latest-blog-posts";
+@import "sections/single_page";
 
 html,
 body {
@@ -54,6 +59,9 @@ body {
 
   @include media("<phone") {
     font-size: 13px;
+  }
+  &.admin-bar {
+    margin-top: 40px;
   }
 }
 
@@ -112,46 +120,6 @@ body {
   }
 }
 
-.check-list {
-  @extend %listreset;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 15px;
-  font: 16px/1.5 $base-font-sans-serif;
-
-  @include media("<phone") {
-    margin: 0 0 20px;
-  }
-
-  li {
-    padding: 0 50px 30px 28px;
-    margin: 0;
-    position: relative;
-
-    @include media("<desktop") {
-      padding-right: 0;
-    }
-
-    @include media("<phone") {
-      margin: 0;
-    }
-
-    &:before {
-      content: "\e90a";
-      font-family: "icomoon" !important;
-      color: $base-color-1;
-      position: absolute;
-      left: 0px;
-      top: 0;
-
-      @include media("<phone") {
-        left: 4px;
-        top: 0;
-      }
-    }
-  }
-}
-
 .scroll {
   .btn-back {
     right: 15px;
@@ -181,22 +149,36 @@ body {
     content: "\e910";
     font-family: "icomoon";
     font-size: 36px;
-    line-height: 0;
+    margin-bottom: 3px;
     color: #fff;
-    transform: rotate(180deg);
   }
 }
 
-#mySpriteSpin {
-  // width: 100% !important;
-  // height: 600px;
-  // padding: 0 0 56%;
-  // height: 700px !important;
-  box-shadow: 0 0 5px rgba(black, 0.5);
+.price {
+  font-size: 24px;
+  color: #000;
+  font-weight: 400;
+  letter-spacing: 1px;
 
-  .spritespin-canvas {
-    // left: 0 !important;
-    // right: 0 !important;
-    // transform: scale(0.5);
+  del {
+    color: #979797;
+    margin-right: 20px;
+    text-decoration: none;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 55%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 100%;
+      background: #979797;
+    }
+  }
+
+  ins {
+    text-decoration: none;
   }
 }

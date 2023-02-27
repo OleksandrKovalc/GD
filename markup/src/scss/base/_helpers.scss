@@ -23,12 +23,12 @@
   transition: all 0.3s;
 }
 
-.ellipsis {
+.ellipsis,
+%ellipsis {
   white-space: nowrap; /* 1 */
   text-overflow: ellipsis; /* 2 */
   overflow: hidden;
 }
-
 
 // mixin
 @mixin placeholder {
