@@ -4,6 +4,7 @@ $breakpoints: (
   "tablet": 768px,
   "desktop": 1024px,
   "widescreen": 1200px,
+  "hd-screen": 1400px,
 );
 
 @import "base/variables";
@@ -26,6 +27,8 @@ $breakpoints: (
 @import "sections/header";
 @import "sections/footer";
 @import "sections/aside";
+@import "sections/faq";
+@import "sections/404";
 @import "sections/visual-section";
 @import "sections/app-section";
 @import "sections/best-sellers";
@@ -41,6 +44,11 @@ $breakpoints: (
 @import "sections/3d_viewer";
 @import "sections/latest-blog-posts";
 @import "sections/single_page";
+@import "sections/about_us";
+@import "sections/team-section";
+@import "sections/distribution-section";
+@import "sections/map_block";
+@import "sections/achieving-section";
 
 html,
 body {
@@ -120,6 +128,21 @@ body {
   }
 }
 
+.top-visual-about {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 15px 30px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+  }
+
+  .img-visual {
+    @extend %objectfit;
+    min-height: 370px;
+  }
+}
+
 .scroll {
   .btn-back {
     right: 15px;
@@ -151,6 +174,10 @@ body {
     font-size: 36px;
     margin-bottom: 3px;
     color: #fff;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
   }
 }
 

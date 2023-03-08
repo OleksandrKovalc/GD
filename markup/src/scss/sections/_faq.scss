@@ -1,0 +1,116 @@
+.faq-section {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 15px 30px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+  }
+
+  .content-holder {
+    padding: 48px 8% 100px;
+    background: #f8f8f8;
+
+    @include media("<hd-screen") {
+      padding: 50px 30px;
+    }
+    @include media("<tablet") {
+      padding: 40px 20px;
+    }
+
+    @include media("<phone") {
+      padding: 30px 10px;
+    }
+  }
+
+  .faq-list {
+  }
+
+  .faq-item {
+    background: #fff;
+    padding: 20px 80px 20px 30px;
+    margin: 0 0 15px;
+    position: relative;
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #777777;
+    cursor: pointer;
+
+    @include media("<tablet") {
+      font-size: 15px;
+      padding-right: 50px;
+      padding-left: 20px;
+      min-height: 70px;
+    }
+
+    &:before {
+      content: "\e919";
+      font: 23px/1 "icomoon";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 25px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $base-color-1;
+      color: #fff;
+      transition: 0.3s all;
+
+      @include media("<tablet") {
+        width: 30px;
+        height: 30px;
+        right: 15px;
+        font-size: 17px;
+      }
+    }
+
+    .title {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #202020;
+
+      @include media("<tablet") {
+        font-size: 14px;
+      }
+    }
+
+    .text-holder {
+      display: none;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &.text-active {
+      .text-holder {
+        display: block;
+      }
+
+      &:before {
+        transform: translateY(-50%) rotate(45deg);
+        color: #979797;
+        background: transparent;
+      }
+    }
+  }
+
+  .btn-holder {
+    text-align: center;
+    padding-top: 35px;
+
+    .btn {
+      min-width: 330px;
+
+      @include media("<phone") {
+        min-width: 220px;
+      }
+    }
+  }
+}

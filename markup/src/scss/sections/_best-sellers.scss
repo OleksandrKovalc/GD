@@ -16,6 +16,10 @@
     @include media("<tablet") {
       font-size: 20px;
     }
+
+    @include media("<phone") {
+      font-size: 18px;
+    }
   }
 
   .three-columns {
@@ -26,6 +30,10 @@
 
     @include media("<tablet") {
       padding: 10px 0 0;
+    }
+
+    @include media("<phone") {
+      padding: 0;
     }
 
     .col {

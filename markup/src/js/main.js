@@ -1,18 +1,20 @@
-//= wow.min.js
+//= wow.js
 //= slick.js
 //= slick_custom.js
 //= lightbox.js
-//= anchors.js
+//=  anchors.js
 //= fixed-btn-back.js
 //= input-button.js
 //= 3d_viewer.js
+//= map.js
+//= faq.js
 
 new WOW().init();
 
 $(function () {
   //nav dropdown
-  $(".menu .menu-item-has-children a").on("click", function () {
-    $(this).parents(".menu-item-has-children ").toggleClass("active");
+  $(".menu .dropdown a").on("click", function () {
+    $(this).parents(".dropdown ").toggleClass("li-active");
   });
 
   //custom select

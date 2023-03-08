@@ -134,27 +134,26 @@
 }
 
 .header_menu_holder {
-  padding: 19px 0;
-
   @include media("<desktop") {
     position: absolute;
     right: -400px;
     width: 260px;
     top: 0;
     background: #fff;
-    padding: 15px 18px;
+    padding: 5px 18px;
   }
 
-  @include media("<phone") {
+  @include media("<desktop") {
     height: 100vh;
     display: flex;
+    overflow-y: auto;
   }
 
   .container {
     @include media("<desktop") {
       padding: 0;
     }
-    @include media("<phone") {
+    @include media("<desktop") {
       margin: 0;
       width: 100%;
       display: flex;
@@ -170,6 +169,8 @@
       @include media("<desktop") {
         flex-direction: column;
         align-items: inherit;
+        flex-grow: 1;
+        justify-content: flex-start;
       }
     }
   }
@@ -189,7 +190,7 @@
       align-items: center;
 
       @include media("<desktop") {
-        padding: 55px 0 14px;
+        padding: 70px 0 14px;
         justify-content: flex-end;
       }
     }
@@ -295,7 +296,7 @@
   max-width: 146px;
   display: flex;
   text-align: center;
-  margin-right: 65px;
+  margin-right: 40px;
 }
 
 #nav {
@@ -305,6 +306,7 @@
 .menu {
   @extend %listreset;
   display: flex;
+  align-items: center;
 
   @include media("<desktop") {
     display: block;
@@ -314,11 +316,26 @@
     border-top: 1px solid #efefef;
   }
 
-  li {
+  > li {
     margin: 0 15px;
+    padding: 0 0 23px;
+    margin-top: 25px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s border-bottom;
 
     @include media("<desktop") {
       margin-bottom: 25px;
+      padding: 0;
+      margin: 0 0 10px;
+      border-color: transparent !important;
+    }
+
+    &:hover {
+      border-color: $base-color-1;
+
+      > a {
+        color: $base-color-1;
+      }
     }
 
     &:last-child {
@@ -327,60 +344,254 @@
       }
     }
 
-    > a {
+    a {
+      color: $gray;
+      text-decoration: none;
       font-size: 16px;
+
+      @include media("<desktop") {
+        display: block;
+        padding: 5px 0;
+      }
+
+      &:hover {
+        color: $base-color-1;
+      }
     }
   }
 
-  .menu-item-has-children {
+  .dropdown {
     position: relative;
-    padding: 0 20px 0 0;
+    padding-right: 20px;
 
-    &:hover,
-    &:active {
-      .sub-menu {
-        display: block;
-      }
+    @include media("<desktop") {
+      padding-right: 15px;
     }
 
     &:before {
-      content: "\e910";
-      font: 700 13px/1 "icomoon" !important;
+      content: "\e915";
+      font: 700 13px/0 "icomoon" !important;
       position: absolute;
       right: 0;
-      top: 54%;
+      top: 13px;
       transform: translateY(-50%);
       color: $gray;
+      transition: 0.3s all;
+
+      @include media("<desktop") {
+        top: 18px;
+        font-size: 16px !important;
+      }
+    }
+
+    &:hover {
+      &:before {
+        transform: rotate(180deg);
+
+        @include media("<desktop") {
+          transform: rotate(0);
+        }
+      }
+
+      > a {
+        @include media("<desktop") {
+          color: $gray;
+        }
+      }
+
+      .dropdown-menu {
+        display: block;
+
+        @include media("<desktop") {
+          display: none;
+        }
+      }
+
+      .menu-slider {
+        left: 50%;
+      }
+    }
+
+    &.active {
+      > a {
+        border-color: $base-color-1;
+
+        @include media("<desktop") {
+          border-color: transparent;
+        }
+      }
+    }
+
+    &.li-active {
+      @include media("<desktop") {
+        margin: 0;
+      }
+      .dropdown-menu,
+      .sub-menu {
+        @include media("<desktop") {
+          display: block !important;
+        }
+      }
+
+      @include media("<desktop") {
+        &:before {
+          transform: rotate(180deg);
+          color: $base-color-1;
+        }
+
+        > a {
+          color: $base-color-1;
+        }
+      }
     }
   }
 
-  a {
-    color: $gray;
-    text-decoration: none;
-
-    &:hover,
-    &:active {
-      color: $base-color-1;
-    }
-  }
-
+  .dropdown-menu,
   .sub-menu {
     @extend %listreset;
     display: none;
     position: absolute;
     left: 0;
-    top: 100%;
+    top: calc(100% + 2px);
     z-index: 10;
-    padding: 7px 15px;
-    min-width: 150px;
-    background: white;
+    padding: 15px 25px;
+    min-width: 200px;
     background: white;
     box-shadow: 0 0 5px rgba(black, 0.1);
+
+    @include media("<desktop") {
+      position: static;
+      box-shadow: none;
+      padding: 10px 0 5px;
+    }
+
     li {
-      margin: 0 0 5px;
+      margin: 0 0 8px;
+
+      &:last-child {
+        margin: 0;
+      }
     }
     a {
       font-size: 16px;
+      padding: 5px 0 0;
+      display: inline-block;
+
+      @include media("<desktop") {
+        font-size: 14px;
+        padding: 5px 0;
+        color: #000;
+      }
+    }
+  }
+
+  .dropdown-menu.menu-slider {
+    display: block;
+    position: fixed;
+    padding: 30px 8%;
+    top: 124px;
+    left: -3000vw;
+    transform: translateX(-50%);
+    max-width: 1440px;
+    width: 100vw;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: none;
+
+    @include media("<widescreen") {
+      padding: 30px 60px;
+      font-size: 14px;
+    }
+
+    @include media("<desktop") {
+      display: none !important;
+      position: static;
+      padding: 10px 0 5px;
+      transform: translate(0);
+      min-width: 1px;
+      width: auto;
+      text-align: right;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: $base-color-4;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+
+      @include media("<desktop") {
+        width: auto !important;
+        display: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100vh;
+      width: 100vw;
+      background: #26232b;
+      opacity: 0.7;
+
+      @include media("<desktop") {
+        display: none;
+      }
+    }
+
+    li {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+
+      @include media("<desktop") {
+        margin: 0 0 5px;
+      }
+    }
+
+    .slick-slide {
+      padding: 0 5px;
+
+      a {
+        &:hover {
+          color: $base-color-1;
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.slick-next {
+        right: 20px;
+        left: auto;
+      }
+    }
+  }
+
+  .img-menu {
+    max-width: 80%;
+    margin: 0 auto 10px;
+
+    @include media("<desktop") {
+      display: none;
+    }
+  }
+
+  .menu-item.active {
+    span {
+      color: $base-color-1;
     }
   }
 }
@@ -423,6 +634,8 @@
 }
 
 .nav-active {
+  position: fixed;
+
   .header_menu_holder {
     right: 0;
 
@@ -435,6 +648,10 @@
       bottom: 0;
       z-index: -1;
       background: rgba(28, 25, 25, 0.4);
+
+      @include media(">desktop") {
+        display: none;
+      }
     }
   }
 
@@ -444,6 +661,7 @@
 
   .nav-opener {
     background: $base-color-1;
+    box-shadow: 0 0 10px 10px white;
 
     span {
       opacity: 0;

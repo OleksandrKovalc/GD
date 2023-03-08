@@ -1,0 +1,75 @@
+.page-not-found {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 16px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+    color: #000;
+    font-size: 18px;
+  }
+
+  @include media("<tablet") {
+    font-size: 16px;
+  }
+
+  &__title {
+    font-size: 120px;
+    margin: 30px 0;
+    display: none;
+
+    @include media("<desktop") {
+      display: block;
+    }
+  }
+
+  &__content {
+    background-size: cover;
+    min-height: 860px;
+    padding: 54px 30px 80px;
+    max-width: 1380px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include media("<widescreen") {
+      min-height: 700px;
+    }
+
+    @include media("<desktop") {
+      min-height: 100px;
+      background: none !important;
+    }
+
+    @include media("<tablet") {
+      padding: 40px 0;
+    }
+  }
+
+  &__sub-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.8;
+    margin: 0 0 25px;
+
+    @include media("<tablet") {
+      line-height: 1.4;
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 5px;
+
+    @include media("<tablet") {
+      margin: 0 0 8px;
+    }
+  }
+
+  a {
+    color: #00ff67;
+
+    @include media("<desktop") {
+      color: $base-color-1;
+    }
+  }
+}

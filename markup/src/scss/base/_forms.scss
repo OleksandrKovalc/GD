@@ -20,14 +20,14 @@ textarea {
   box-sizing: border-box;
   border: 1px solid $form-element-border-color;
   padding: $form-element-padding;
+  font-size: 14px;
+  height: 45px;
+  border-radius: 2px;
+  width: 100%;
 
   // &:hover {
 
   // }
-
-  &:focus {
-    border-color: $form-element-focus-border-color;
-  }
 
   @include placeholder {
     color: $placeholder-color;
@@ -51,7 +51,6 @@ textarea {
   resize: none;
 }
 
-button,
 input[type="button"],
 input[type="reset"],
 input[type="file"],
@@ -59,6 +58,27 @@ input[type="submit"] {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 168px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid transparent;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:disabled {
+    opacity: 0.9;
+  }
 }
 
 .select {
@@ -173,6 +193,49 @@ input[type="submit"] {
 
     .select-list {
       display: block;
+    }
+  }
+}
+
+.custom-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    top: 100%;
+    visibility: hidden;
+
+    &:checked + label {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  label {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:before {
+      content: "\e90a";
+      font-family: "icomoon";
+      font-size: 12px;
+      color: $base-color-1;
+      // line-height: 1.2;
+      opacity: 0;
     }
   }
 }

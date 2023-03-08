@@ -37,10 +37,10 @@ $btn-padding: 0.4em 0.7em !default;
 $btn-font-size: inherit !default;
 
 // Forms
-$form-element-padding: $btn-padding !default;
-$form-element-border-color: $gray !default;
+$form-element-padding: 12px !default;
+$form-element-border-color: #efefef !default;
 $form-element-focus-border-color: $black !default;
-$placeholder-color: $gray !default;
+$placeholder-color: #979797 !default;
 
 // Headers
 $h1-font-size: 45px !default;

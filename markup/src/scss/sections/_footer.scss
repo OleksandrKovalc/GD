@@ -28,15 +28,12 @@
         padding: 15px;
 
         @include media("<desktop") {
-          width: 33.33%;
-        }
-
-        @include media("<tablet") {
           width: 50%;
         }
 
-        @include media("<phone") {
+        @include media("<tablet") {
           width: 100%;
+          padding-bottom: 20px;
         }
 
         p {
@@ -46,20 +43,75 @@
     }
   }
 
-  .btn-blue {
-    margin-top: 45px;
-    text-transform: none;
-    min-width: 100px;
-    width: 100%;
+  .mc-field-group {
+    margin: 0 0 23px;
 
-    @include media("<widescreen") {
-      padding-left: 8px;
-      padding-right: 8px;
-      font-size: 12px;
+    input[type="email"] {
+      height: 52px;
+      border: 1px solid #45147a;
+      border-radius: 5px;
+      background: none;
+      padding: 13px 22px 11px;
+      font-size: 17px;
+      font-weight: 500;
+
+      @include placeholder {
+        color: #fefefe;
+      }
+    }
+  }
+
+  #mc_embed_signup {
+    margin-top: 45px;
+
+    @include media("<tablet") {
+      margin: 0;
     }
 
-    @include media("<phone") {
-      margin: 0;
+    .mc-fake-condition {
+      font-size: 12px;
+      line-height: 1.1;
+      display: flex;
+      margin: 0 0 23px;
+
+      @include media("<desktop") {
+        font-size: 15px;
+        line-height: 1.3;
+        align-items: center;
+      }
+    }
+
+    .custom-checkbox {
+      margin: 0 16px 5px 0;
+    }
+
+    .btn-blue-input {
+      display: inline-block;
+      text-transform: none;
+      min-width: 100px;
+      width: 100%;
+      padding: 20px 10px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      background: $base-color-2;
+      color: #fff;
+      border: 1px solid $base-color-2;
+      animation: disabled 1s;
+
+      @include media("<widescreen") {
+        font-size: 11px;
+      }
+
+      @include media("<desktop") {
+        font-size: 14px;
+      }
+
+      @include media("<phone") {
+        margin: 0;
+      }
     }
   }
 

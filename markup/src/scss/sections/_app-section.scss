@@ -11,6 +11,7 @@
   .bg-holder {
     background: $base-color-4;
     display: flex;
+    align-items: flex-start;
     padding: 54px 7% 70px;
 
     @include media("<widescreen") {
@@ -19,7 +20,7 @@
 
     @include media("<tablet") {
       display: block;
-      padding: 30px 16px;
+      padding: 45px 16px;
     }
 
     @include media("<phone") {
@@ -34,20 +35,47 @@
     line-height: 1.6;
     max-width: 520px;
     margin: 0 0 45px;
+
+    @include media("<desktop") {
+      margin: 0 0 30px;
+    }
   }
 
   .img-holder {
-    width: 316px;
+    max-width: 260px;
     flex-shrink: 0;
+    padding: 5px 5px 0;
+    width: 100%;
+    margin: 0 60px 0 0;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+
+    @include media("<desktop") {
+      margin-right: 30px;
+    }
 
     @include media("<tablet") {
-      margin: 0 auto;
-      padding-left: 30px;
+      margin: 0 auto 30px;
     }
 
-    @include media("<phone") {
-      padding: 0;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/rectangle-slider.png);
+      background-size: 100% 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
     }
+  }
+  .app-img-slider,
+  .slick-list,
+  .slick-slide {
+    border-radius: 36px;
+    overflow: hidden;
   }
 
   .h1 {
@@ -58,16 +86,33 @@
     }
   }
 
- .check-list{
-  li{
-    width: 50%;
+  ul {
+    @extend %listreset;
+    margin: 0 0 15px;
+    display: flex;
+    flex-wrap: wrap;
 
-    @include media("<desktop") {
-      width: 100%;
-      padding-right: 0;
+    li {
+      width: 50%;
+      position: relative;
+      padding: 0 38px 30px;
+
+      @include media("<desktop") {
+        width: 100%;
+        padding: 0 0 10px 38px;
+      }
+
+      &:before {
+        content: "\e90a";
+        font-size: 18px;
+        font-family: "icomoon";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        color: $base-color-1;
+      }
     }
   }
- }
 
   .head-text {
     color: #000;

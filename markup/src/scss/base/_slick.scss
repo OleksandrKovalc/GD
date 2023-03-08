@@ -1,4 +1,4 @@
-/* Slider */
+
 .slick-slider {
   position: relative;
   display: block;
@@ -88,6 +88,7 @@
 }
 
 .slick-arrow {
+  flex-shrink: 0;
   width: 42px;
   height: 42px;
   border-radius: 50%;

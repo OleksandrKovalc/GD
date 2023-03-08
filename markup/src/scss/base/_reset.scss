@@ -9,6 +9,10 @@ html {
 
 * {
   max-height: 1000000px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 body {

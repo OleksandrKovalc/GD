@@ -1,0 +1,99 @@
+.team-section {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 15px 30px;
+
+  @include media("<desktop") {
+    padding: 15px 20px;
+  }
+
+  .content-holder {
+    padding: 48px 8% 100px;
+    background: #f8f8f8;
+
+    @include media("<hd-screen") {
+      padding: 50px 30px;
+    }
+    @include media("<tablet") {
+      padding: 40px 20px;
+    }
+
+    @include media("<phone") {
+      padding: 30px 10px;
+    }
+  }
+
+  .h1,
+  h2 {
+    @include media("<desktop") {
+      margin-bottom: 15px;
+    }
+
+    @include media("<phone") {
+      margin-left: 15px;
+    }
+  }
+
+  .three-columns {
+    padding: 10px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    font-size: 14px;
+    line-height: 1.57;
+
+    @include media("<desktop") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media("<tablet") {
+      gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include media("<phone") {
+      gap: 10px;
+    }
+
+    .col {
+      padding: 30px 19% 40px;
+      background: #fff;
+      border: 1px solid #efefef;
+      color: #0d0c3b;
+
+      @include media("<hd-screen") {
+        padding: 30px;
+      }
+
+      @include media("<desktop") {
+        padding: 30px 20px;
+      }
+    }
+
+    .img-box {
+      border: 8px solid #f3f3f3;
+      overflow: hidden;
+      border-radius: 50%;
+      overflow: hidden;
+      max-width: 150px;
+      margin: 0 auto 30px;
+    }
+
+    strong {
+      display: block;
+      color: #000;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+
+    span {
+      display: block;
+      color: #777;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      margin: 0 0 15px;
+    }
+  }
+}

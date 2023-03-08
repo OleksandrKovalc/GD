@@ -11,6 +11,11 @@
   border-radius: 50px;
   text-decoration: none;
   border: 1px solid transparent;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 .btn-blue-border {
@@ -74,6 +79,13 @@
     border: 1px solid $base-color-2;
     color: $base-color-2;
   }
+}
+
+.btn-green {
+  background: $base-color-1;
+  color: #fff;
+  border-color: $base-color-1;
+  min-width: 200px;
 }
 
 .btn-buy {

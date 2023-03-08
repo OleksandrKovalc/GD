@@ -1,0 +1,82 @@
+.achieving-section {
+  background: #1b1a1a;
+  margin: 50px auto 30px;
+  max-width: 1440px;
+
+  @include media("<tablet") {
+    margin-top: 15px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    @include media("<tablet") {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .img-box {
+    background: url("../img/vector-bg-01.svg") 50% 0 no-repeat;
+    background-size: 100%;
+    width: 44%;
+    margin: -50px 50px 0;
+    text-align: center;
+
+    @include media("<desktop") {
+      margin: -50px 20px 0 0;
+    }
+
+    @include media("<tablet") {
+      margin: 20px 0 0;
+      width: 80%;
+    }
+
+    @include media("<phone") {
+      width: 100%;
+    }
+
+    img {
+      max-width: 316px;
+
+      @include media("<phone") {
+        max-width: 230px;
+      }
+    }
+  }
+
+  .align-holder {
+    padding: 20px 0;
+
+    @include media("<tablet") {
+      padding-top: 36px;
+      width: 100%;
+    }
+
+    @include media("<phone") {
+      padding-left: 20px;
+    }
+  }
+
+  h2,
+  .h1 {
+    max-width: 540px;
+    font-weight: 500;
+    font-size: 35px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #f8f8f8;
+    margin: 0 0 35px;
+
+    @include media("<xs-phone") {
+      font-size: 26px;
+    }
+  }
+
+  .btn {
+    &:hover,
+    &:active {
+      background: none;
+    }
+  }
+}
